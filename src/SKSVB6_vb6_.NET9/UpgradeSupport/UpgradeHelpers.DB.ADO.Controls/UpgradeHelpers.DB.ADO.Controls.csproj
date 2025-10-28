@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DefineConstants>TRACE</DefineConstants>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <PackageId>Mobilize.VBUC.Helpers.DB.ADO.Controls</PackageId>
+    <title>Mobilize.VBUC.Helpers.DB.ADO.Controls</title>
+    <Description>Nuget for ADO.Controls Helper $(InformationalVersion)</Description>
+    <PackageIconUrl>https://mobilize.blob.core.windows.net/qaimages/mobilize_email_imgs/Logos/3bars-Icon.png</PackageIconUrl>
+    <Product>Growth Acceleration Partners, LLC VBUC UpgradeHelpers</Product>
+    <Company>Growth Acceleration Partners, LLC</Company>
+    <Authors>Growth Acceleration Partners, LLC</Authors>
+    <Copyright>Copyright (c) Growth Acceleration Partners, LLC. All rights reserved.</Copyright>
+    <PackageTags>Growth Acceleration Partners, LLC VBUC ADO.Controls Helper</PackageTags>
+    <IsPackable>true</IsPackable>
+    <Version>$(GitVersion_FullSemVer)</Version>
+    <InformationalVersion>$(GitVersion_InformationalVersion)</InformationalVersion>
+    <IncludeSource>False</IncludeSource>
+    <IncludeSymbols>False</IncludeSymbols>
+    <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+    <NoWarn>1701;1702;WFO1000</NoWarn>
+    <DefineConstants>NET_CORE_APP;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UpgradeHelpers.DB.ADO\UpgradeHelpers.DB.ADO.csproj" />
+    <ProjectReference Include="..\UpgradeHelpers.DB.Essentials.Controls\UpgradeHelpers.DB.Essentials.Controls.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

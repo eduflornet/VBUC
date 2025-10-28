@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DefineConstants>TRACE</DefineConstants>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <PackageId>Mobilize.VBUC.Helpers.DataGridViewFlex</PackageId>
+    <title>Mobilize.VBUC.Helpers.DataGridViewFlex</title>
+    <Description>Nuget for DataGridViewFlex Helper $(InformationalVersion)</Description>
+    <PackageIconUrl>https://mobilize.blob.core.windows.net/qaimages/mobilize_email_imgs/Logos/3bars-Icon.png</PackageIconUrl>
+    <Product>Growth Acceleration Partners, LLC VBUC UpgradeHelpers</Product>
+    <Company>Growth Acceleration Partners, LLC</Company>
+    <Authors>Growth Acceleration Partners, LLC</Authors>
+    <Copyright>Copyright (c) Growth Acceleration Partners, LLC. All rights reserved.</Copyright>
+    <PackageTags>Growth Acceleration Partners, LLC VBUC DataGridViewFlex Helper</PackageTags>
+    <IsPackable>true</IsPackable>
+    <Version>$(GitVersion_FullSemVer)</Version>
+    <InformationalVersion>$(GitVersion_InformationalVersion)</InformationalVersion>
+    <IncludeSource>False</IncludeSource>
+    <IncludeSymbols>False</IncludeSymbols>
+    <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+    <NoWarn>1701;1702;WFO1000</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0-windows' Or '$(TargetFramework)'=='net8.0-windows' Or '$(TargetFramework)'=='net9.0-windows'">
+    <DefineConstants>NET_CORE_APP;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-windows|x86'">
+    <WarningLevel>8</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="packages.config" />
+    <None Remove="Properties\Settings.settings" />
+    <None Remove="Settings.StyleCop" />
+    <None Remove="UpgradeHelpers.DataGridViewFlex.NetFramework.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridViewCommon\UpgradeHelpers.DataGridViewCommon.csproj" />
+  </ItemGroup>
+</Project>

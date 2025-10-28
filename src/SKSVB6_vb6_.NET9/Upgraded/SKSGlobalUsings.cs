@@ -1,0 +1,9 @@
+global using System.Windows.Forms;
+global using UpgradeHelpers.Helpers;
+global using UpgradeHelpers.Gui.Controls;
+global using UpgradeHelpers.DB.ADO;
+global using Microsoft.VisualBasic;
+global using System.Collections.Specialized;
+global using System.Media;
+global using System.Data.Common;
+global using System.Text;
