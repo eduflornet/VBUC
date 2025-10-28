@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Description>UpgradeHelpers.Utils.CursorHelper offers compatibility operations between vb6 and .net Cursors </Description>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DefineConstants>TRACE;NET_CORE_APP</DefineConstants>
+    <UseWindowsForms>true</UseWindowsForms>
+    <PackageId>Mobilize.VBUC.Helpers.Utils.CursorHelper</PackageId>
+    <title>Mobilize.VBUC.Helpers.Utils.CursorHelper</title>
+    <Description>Nuget for Cursor Helper version $(InformationalVersion)</Description>
+    <PackageIconUrl>https://mobilize.blob.core.windows.net/qaimages/mobilize_email_imgs/Logos/3bars-Icon.png</PackageIconUrl>
+    <Product>Growth Acceleration Partners, LLC VBUC UpgradeHelpers</Product>
+    <Company>Growth Acceleration Partners, LLC</Company>
+    <Authors>Growth Acceleration Partners, LLC</Authors>
+    <Copyright>Copyright (c) Growth Acceleration Partners, LLC. All rights reserved.</Copyright>
+    <PackageTags>Growth Acceleration Partners, LLC VBUC Cursor Helper</PackageTags>
+    <IsPackable>true</IsPackable>
+    <Version>$(GitVersion_FullSemVer)</Version>
+    <InformationalVersion>$(GitVersion_InformationalVersion)</InformationalVersion>
+    <IncludeSource>False</IncludeSource>
+    <IncludeSymbols>False</IncludeSymbols>
+    <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+    <NoWarn>1701;1702;WFO1000</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.4.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

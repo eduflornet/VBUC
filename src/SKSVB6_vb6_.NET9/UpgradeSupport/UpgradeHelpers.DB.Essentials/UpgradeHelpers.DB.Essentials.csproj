@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <LangVersion>6</LangVersion>
+    <PackageId>Mobilize.VBUC.Helpers.DB.Essentials</PackageId>
+    <title>Mobilize.VBUC.Helpers.DB.Essentials</title>
+    <Product>Growth Acceleration Partners, LLC VBUC UpgradeHelpers</Product>
+    <Company>Growth Acceleration Partners, LLC</Company>
+    <Authors>Growth Acceleration Partners, LLC</Authors>
+    <Description>Nuget for Mobilize.VBUC.Helpers.DB.Essentials version $(InformationalVersion)</Description>
+    <Copyright>Copyright (c) Growth Acceleration Partners, LLC. All rights reserved.</Copyright>
+    <PackageTags>Growth Acceleration Partners, LLC VBUC Helpers DBEssentials</PackageTags>
+    <PackageIconUrl>https://mobilize.blob.core.windows.net/qaimages/mobilize_email_imgs/Logos/3bars-Icon.png</PackageIconUrl>
+    <IsPackable>true</IsPackable>
+    <Version>$(GitVersion_FullSemVer)</Version>
+    <InformationalVersion>$(GitVersion_InformationalVersion)</InformationalVersion>
+    <IncludeSource>False</IncludeSource>
+    <IncludeSymbols>False</IncludeSymbols>
+    <PackageOutputPath>..\..\artifacts</PackageOutputPath>
+    <NoWarn>1701;1702;WFO1000</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net6.0-windows' Or '$(TargetFramework)'=='net8.0-windows' Or '$(TargetFramework)'=='net9.0-windows'">
+    <DefineConstants>NET_CORE_APP;WINFORMS;$(DefineConstants)</DefineConstants>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0' Or '$(TargetFramework)'=='net6.0' Or '$(TargetFramework)'=='net8.0' Or '$(TargetFramework)'=='net9.0'">
+    <DefineConstants>NET_STANDARD_APP;$(DefineConstants)</DefineConstants>
+    <UseWindowsForms>false</UseWindowsForms>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.13.0" />
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.4.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.Odbc" Version="6.0.0" />
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
+    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UpgradeHelpers.Utils\UpgradeHelpers.Utils.csproj" />
+  </ItemGroup>
+</Project>
