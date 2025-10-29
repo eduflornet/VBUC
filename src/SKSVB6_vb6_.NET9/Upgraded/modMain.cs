@@ -1,5 +1,10 @@
 
+using System.IO.Packaging;
+using System.Data.SQLite;
+using System;
+
 namespace SKS;
+
 internal static class modMain
 {
 
@@ -19,21 +24,28 @@ internal static class modMain
 	public static string msg = "";
 	public static string ImgName = "", ImgSrc = "";
 
-	//UPGRADE_WARNING: (1047) Application will terminate when Sub Main() finishes. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1047
-	[STAThread]
-	public static void Main()
-	{
-		Application.EnableVisualStyles();
-		Application.SetCompatibleTextRenderingDefault(false);
-		ConnectionString = "DRIVER=SQLite3 ODBC Driver; Database=Orders.db; LongNames=0; Timeout=1000; NoTXN=0; SyncPragma=NORMAL; StepAPI=0;";
+    // Replace the problematic lines in Main() with the following to fix CS1026 and CS0234
 
-		modConnection.OpenConnection();
-		CurrentUserAdmin = true;
-		UserFullname = "Allan Cantillo";
-		UserLevel = "Administrator";
-		UserId = "acantillo";
-		Application.Run(frmMain.DefInstance);
-	}
+    [STAThread]
+    public static void Main()
+    {
+        System.Data.Common.DbProviderFactories.RegisterFactory(
+            "System.Data.SQLite", SQLiteFactory.Instance);
+        
+        // The rest of your Main() method can remain unchanged, as long as you have
+        // the correct using directive at the top of the file and the System.Data.SQLite
+        // NuGet package is referenced in your project.
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        ConnectionString = "DRIVER=SQLite3 ODBC Driver; Database=Orders.db; LongNames=0; Timeout=1000; NoTXN=0; SyncPragma=NORMAL; StepAPI=0;";
+
+        modConnection.OpenConnection();
+        CurrentUserAdmin = true;
+        UserFullname = "Allan Cantillo";
+        UserLevel = "Administrator";
+        UserId = "acantillo";
+        Application.Run(frmMain.DefInstance);
+    }
 
 	internal static void LogStatus(string message, Form frm = null)
 	{
