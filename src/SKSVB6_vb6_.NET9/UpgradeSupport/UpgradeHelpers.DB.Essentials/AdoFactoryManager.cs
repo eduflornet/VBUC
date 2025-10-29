@@ -107,7 +107,8 @@ namespace UpgradeHelpers.DB
 
         private static void LoadDefaultFactorySettings(Dictionary<string, FactoryConfigurationElement> factorySection)
         {
-            factorySection.Add("Access", new FactoryConfigurationElement("Access", "System.Data.OleDb", DatabaseType.Access, true));
+            factorySection.Add("SQLite", new FactoryConfigurationElement("SQLite", "System.Data.SQlite", DatabaseType.Undefined, true));
+            factorySection.Add("Access", new FactoryConfigurationElement("Access", "System.Data.OleDb", DatabaseType.Access, false));
             factorySection.Add("SQLServer", new FactoryConfigurationElement("SQLServer", "System.Data.SqlClient", DatabaseType.SQLServer, false));
             //New Changes
             //factorySection.Add("Oracle", new FactoryConfigurationElement("Oracle", "Oracle.DataAccess.Client", DatabaseType.Oracle, false));
